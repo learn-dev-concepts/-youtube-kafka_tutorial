@@ -1,4 +1,4 @@
-package net.javaguides.springboot;
+package net.javaguides.springboot.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +11,12 @@ public class KafkaTopicConfig {
   @Bean
   public NewTopic javaguidesTopic() {
     return TopicBuilder.name("javaguides")
+            .build();
+  }
+
+  @Bean
+  public NewTopic javaguidesJsonTopic() {
+    return TopicBuilder.name("javaguides_json")
             .build();
   }
 }
